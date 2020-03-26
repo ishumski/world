@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Подбор апартаментов</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<form action="" method="post">
+		Диапазон даты заезда в отель
+		<br>
+		c <input type="datetime-local" name="CommingDateCumingDatelol">
+		по <input type="datetime-local" name="LastDate"><br>
+		<br>
+		<button name="reset">Сброс</button>
+		<hr>
+		<br>Количество ночей
+		от <select name="night1" size="1">
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+			<option>6</option>
+			<option>7</option>
+			<option>8</option>
+			<option>9</option>
+			<option>10</option>
+			<option>11</option>
+			<option>12</option>
+			<option>13</option>
+			<option>14</option>
+			<option>15</option>
+		</select>
+		до <select name="night2" size="1">
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+			<option>6</option>
+			<option>7</option>
+			<option>8</option>
+			<option>9</option>
+			<option>10</option>
+			<option>11</option>
+			<option>12</option>
+			<option>13</option>
+			<option>14</option>
+			<option>15</option>
+			<option>16</option>
+		</select>
+		<hr><br>Тип размещения<br>
+		<select name="NumberOfPersons">
+			<option>1 взрослый</option>
+			<option>1 ребёнок</option>
+			<option>1 взрослый и 1 ребёнок</option>
+			<option>2 взрослых и 1 ребёнок</option>
+			<option selected="1 половозрелый самец лосося">1 половозрелый самец лосося</option>
+			<option>2 взрослых и 2 детей</option>
+			<option>3 взрослых</option>
+			<option>3 взрослых и 1 ребенок</option>
+			<option>3 взрослых и 2 ребенок</option>
+			<option>3 взрослых и 3 ребенок</option>
+			<option>2 детей и 1 взрослый</option>
+			<option>3 детей и 1 взрослый</option>
+			<option>4 таких и 4 таких</option>
+		</select><br>
+		<hr>
+		<br>Питание
+		<br>
+		<label for="A">AI</label><input id="A" type="checkbox" name="AllInclusive">
+		<label for="UAI">UltraAI</label for="UAI"><input id="UAI" type="checkbox" name="UltraAllInclusive">
+		<label for="B">BD</label><input id="B" type="checkbox" name="BrekfastDinner">
+		<label for="H">HB</label><input id="H" type="checkbox" name="HalfBoard"><br>
+		<button type="resert">Обновить</button>
+		<button type="submit"><a href="index1.html">Назад</a></button>
+	</form>
+
+</body>
+</html>
