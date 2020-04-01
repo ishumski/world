@@ -1,0 +1,58 @@
+.nav-link {
+    text-decoration: none;
+ 
+}
+
+.newNav {
+    border: solid #78c0e0 2px;
+    border-radius: 15px;
+    width: 45%;
+
+}
+
+.new-article {
+    border: solid grey 1px;
+    width: 50%;
+    padding: 15px;
+    margin-left: 9%;
+}
+
+.article-title {
+    text-align: center;
+    color: #3943b4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+
+}
+
+.combo {
+    text-align: right;
+    border: dashed blue 1px;
+    border-radius: 15px;
+    width: 100%;
+    padding: 15px;
+}
+
+body {
+    margin-top: 40px;
+    padding: 0 35px;
+    line-height: 1.3;
+    font-size: 1rem;
+    font-family: Verdana;
+
+}
+.shrift {
+    font-size: 10pt;
+}
+.shadow {
+    color: #150578;
+    text-shadow: #b5aaff 3px 3px 2px;    
+}
+.fish {
+    text-indent: 40px;
+    text-align: justify;
+
+}
+.bross {
+    line-height: 5px;
+}
