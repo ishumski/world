@@ -1,0 +1,57 @@
+                body {
+                    background-color: pink;
+                }
+                
+                .test1 {
+                    width: 100%;
+                    text-align: center;
+                    min-height: 100%;
+                }
+                
+                .test2 {
+                    width: 65%;
+                    float: left;
+                    box-sizing: border-box;
+                    min-height: 200px;
+                    border: 1px solid black;
+                    /* border-right: none; */
+                }
+                
+                .test3 {
+                    width: 35%;
+                    float: right;
+                    box-sizing: border-box;
+                    min-height: 200px;
+                    border: 1px solid black;
+                    /* border-left: none; */
+                }
+                
+                .test4 {
+                    width: 33.3%;
+                    float: left;
+                    box-sizing: border-box;
+                    min-height: 200px;
+                    border: 1px solid black;
+                }
+                
+                .test5 {
+                    width: 33.3%;
+                    float: left;
+                    box-sizing: border-box;
+                    min-height: 200px;
+                    border: 1px solid black;
+                }
+                
+                .test6 {
+                    width: 33.3%;
+                    float: right;
+                    box-sizing: border-box;
+                    min-height: 200px;
+                    border: 1px solid black;
+                }
+                
+                .test7 {
+                    width: 100%;
+                    min-height: 200px;
+                    text-align: center;
+                }
