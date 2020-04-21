@@ -1,0 +1,49 @@
+body {
+    padding: 50px;
+    font-family: 'Indie Flower', cursive;
+    color: rgb(241, 18, 241);
+    background-color: pink;
+    text-transform: uppercase;
+    text-align: justify;
+    text-indent: 25px;
+}
+
+p {
+    font-size: 16px;
+}
+
+h1 {
+    text-shadow: -3px 5px 5px #404040;
+}
+
+.test {
+    padding: 10px;
+    border: 1px solid #f53;
+    margin: 20px;
+}
+
+.test2 {
+    border: 1px solid #f93;
+}
+
+.par {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.last {
+    width: 85%;
+    float: left;
+    box-sizing: border-box;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    float: right;
+}
+
+.lastBorder {
+    border: 1px solid black;
+}
