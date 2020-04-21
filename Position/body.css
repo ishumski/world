@@ -1,0 +1,86 @@
+   main {
+       background-color: white;
+       width: 1000px;
+       height: 100%;
+       padding: 30px;
+       margin-left: auto;
+       margin-right: auto;
+   }
+   
+   .LinkA {
+       text-decoration: none;
+   }
+   
+   .SecondNav {
+       border: 1px solid rgb(201, 201, 201);
+       border-radius: 4px;
+       background-color: rgb(201, 201, 201);
+   }
+   
+   .BestArt {
+       border: 1px solid rgb(201, 201, 201);
+       border-radius: 4px;
+       background-color: rgb(201, 201, 201);
+   }
+   
+   .ThirdArt {
+       border: 1px solid black;
+       padding: 10px;
+       text-align: justify;
+   }
+   
+   .LastArt {
+       display: inline-block;
+       border: 1px solid black;
+       padding: 15px 5px 5px 5px;
+       margin: 5px;
+       background-color: rgb(159, 181, 221);
+   }
+   
+   hr {
+       color: black;
+       height: 2px;
+       background-color: black;
+   }
+   
+   button {
+       display: inline-block;
+       border: 1px solid rgb(171, 190, 224);
+       border-radius: 4px;
+       padding: 3px 15px;
+       font-weight: bold;
+       background-color: rgb(171, 190, 224);
+       box-shadow: 3px 3px 4px rgb(1, 52, 148);
+       position: relative;
+   }
+   
+   .Art1 {
+       width: 80%;
+       float: left;
+       box-sizing: border-box;
+       min-height: 200px;
+       margin-bottom: 10px;
+   }
+   
+   .img1 {
+       width: 20%;
+       float: rihgt;
+       box-sizing: border-box;
+       margin-bottom: 10px;
+       min-height: 200px;
+   }
+   
+   .img2 {
+       width: 20%;
+       float: left;
+       margin-bottom: 10px;
+       min-height: auto;
+   }
+   
+   .Art2 {
+       width: 80%;
+       float: right;
+       text-align: justify;
+       margin-bottom: 10px;
+       min-height: auto;
+   }

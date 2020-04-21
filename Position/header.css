@@ -1,0 +1,16 @@
+.SiteHead {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    list-style-position: inside;
+    text-align: center;
+}
+
+.FirstNav {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+    padding-left: 30%;
+}
