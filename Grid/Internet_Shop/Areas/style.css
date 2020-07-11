@@ -1,0 +1,273 @@
+    body {
+        background: rgba(245, 243, 243, 0.959);
+        font-family: Roboto, sans-serif;
+        font-size: 14px;
+    }
+    
+    .container {
+        display: grid;
+        grid-template-columns: 0.8fr 1fr 1fr 1fr;
+        max-width: 1080px;
+        height: 100vh;
+        margin: 0 auto;
+        padding: 25px;
+        grid-template-areas: ". item-1 item-2 item-3" "battery battery-fine battery-ultra battery-cheese" "megapixels megapixels-fine megapixels-ultra megapixels-cheese" "connection connection-fine connection-ultra connection-cheese" "shutter-speed shutter-speed-fine shutter-speed-ultra shutter-speed-cheese" "weight weight-fine weight-ultra weight-cheese" "customer-ratings customer-ratings-fine customer-ratings-ultra customer-ratings-cheese" "price price-fine price-ultra price-cheese";
+    }
+    
+    .item-1 {
+        grid-area: item-1;
+    }
+    
+    .item-2 {
+        grid-area: item-2;
+    }
+    
+    .item-3 {
+        grid-area: item-3;
+    }
+    /* *************************************
+***********main-menu*****************
+************************************* */
+    
+    .battery {
+        grid-area: battery;
+    }
+    
+    .battery-fine {
+        grid-area: battery-fine;
+    }
+    
+    .battery-ultra {
+        grid-area: battery-ultra;
+    }
+    
+    .battery-cheese {
+        grid-area: battery-cheese;
+    }
+    /* ************************************** */
+    
+    .megapixels {
+        grid-area: megapixels;
+    }
+    
+    .megapixels-fine {
+        grid-area: megapixels-fine;
+    }
+    
+    .megapixels-ultra {
+        grid-area: megapixels-ultra;
+    }
+    
+    .megapixels-cheese {
+        grid-area: megapixels-cheese;
+    }
+    /* ************************************** */
+    
+    .connection {
+        grid-area: connection;
+    }
+    
+    .connection-fine {
+        grid-area: connection-fine;
+    }
+    
+    .connection-ultra {
+        grid-area: connection-ultra;
+    }
+    
+    .connection-cheese {
+        grid-area: connection-cheese;
+    }
+    /* ************************************** */
+    
+    .shutter-speed {
+        grid-area: shutter-speed;
+    }
+    
+    .shutter-speed-fine {
+        grid-area: shutter-speed-fine;
+    }
+    
+    .shutter-speed-ultra {
+        grid-area: shutter-speed-ultra;
+    }
+    
+    .shutter-speed-cheese {
+        grid-area: shutter-speed-cheese;
+    }
+    /* ************************************** */
+    
+    .weight {
+        grid-area: weight;
+    }
+    
+    .weight-fine {
+        grid-area: weight-fine;
+    }
+    
+    .weight-ultra {
+        grid-area: weight-ultra;
+    }
+    
+    .weight-cheese {
+        grid-area: weight-cheese;
+    }
+    /* ************************************** */
+    
+    .customer-ratings {
+        grid-area: customer-ratings;
+    }
+    
+    .customer-ratings-fine {
+        grid-area: customer-ratings-fine;
+    }
+    
+    .customer-ratings-ultra {
+        grid-area: customer-ratings-ultra;
+    }
+    
+    .customer-ratings-cheese {
+        grid-area: customer-ratings-cheese;
+    }
+    /* ************************************** */
+    
+    .price {
+        grid-area: price;
+    }
+    
+    .price-fine {
+        grid-area: price-fine;
+    }
+    
+    .price-ultra {
+        grid-area: price-ultra;
+    }
+    
+    .price-cheese {
+        grid-area: price-cheese;
+    }
+    /* *************************************
+***********main-styles*****************
+************************************* */
+    
+    [class*=img] {
+        width: 100px;
+        height: 100px;
+    }
+    
+    [class*=grid] {
+        border-top: 1px solid rgb(207, 207, 207);
+    }
+    
+    [class*=block] {
+        display: grid;
+        place-items: center;
+        background: white;
+    }
+    
+    .grid-menu {
+        display: grid;
+        align-items: center;
+        font-weight: bolder;
+        padding-right: -25%;
+    }
+    
+    .border-block {
+        border-top: 1px solid rgb(207, 207, 207);
+    }
+    
+    .grid-block {
+        color: rgb(141, 138, 138);
+    }
+    
+    .blue-block {
+        background: rgb(86, 111, 255);
+        color: white;
+    }
+    
+    .top-menu {
+        margin-top: -20px;
+    }
+    
+    .down-menu {
+        margin-bottom: -20px;
+    }
+    
+    span {
+        font-size: x-large;
+    }
+    
+    @media screen and (max-width: 800px) {
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            max-width: 800px;
+            height: 100vh;
+            margin: 0 auto;
+            padding: 25px;
+            grid-template-areas: "item-1 item-2 item-3" "battery . ." "battery-fine battery-ultra battery-cheese" "megapixels . ." "megapixels-fine megapixels-ultra megapixels-cheese" "connection . ." "connection-fine connection-ultra connection-cheese" "shutter-speed . ." "shutter-speed-fine shutter-speed-ultra shutter-speed-cheese" "weight. ." "weight-fine weight-ultra weight-cheese" "customer-ratings . ." "customer-ratings-fine customer-ratings-ultra customer-ratings-cheese" "price . ." "price-fine price-ultra price-cheese";
+        }
+        .empty-box {
+            grid-area: 2/2/15/3;
+            background: white;
+            z-index: -1;
+        }
+        [class*=block] {
+            display: grid;
+            place-items: start;
+            background: rgba(245, 243, 243, 0.959);
+            padding: 10px 0px 0px 10px;
+        }
+        .grid-block,
+        .border-block {
+            border-top: 1.5px solid black;
+        }
+        .mid {
+            padding-left: 0px;
+        }
+        .grid-menu {
+            border-top: none;
+        }
+        .big-block {
+            color: black;
+        }
+        .blue-block {
+            background: white;
+        }
+        .border-block {
+            color: rgb(141, 138, 138);
+        }
+        .top-menu,
+        .down-menu {
+            margin: 0;
+        }
+    }
+    
+    @media screen and (max-width: 600px) {
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            max-width: 600px;
+            height: 100vh;
+            margin: 0 auto;
+            padding: 25px;
+            grid-template-areas: "item-1 item-2 item-3" " . battery ." "battery-fine battery-ultra battery-cheese" " . megapixels ." "megapixels-fine megapixels-ultra megapixels-cheese" " . connection ." "connection-fine connection-ultra connection-cheese" " . shutter-speed ." "shutter-speed-fine shutter-speed-ultra shutter-speed-cheese" " . weight ." "weight-fine weight-ultra weight-cheese" " . customer-ratings ." "customer-ratings-fine customer-ratings-ultra customer-ratings-cheese" " . price ." "price-fine price-ultra price-cheese";
+        }
+        .empty-box {
+            grid-area: none;
+        }
+        .blue-block {
+            background: rgba(245, 243, 243, 0.959);
+        }
+        .grid-block,
+        .grid-menu,
+        .big-block,
+        .border-block {
+            display: grid;
+            justify-items: center;
+            align-items: start;
+        }
+        .grid-menu {
+            margin: 50px 0px 10px 0px;
+        }
+    }

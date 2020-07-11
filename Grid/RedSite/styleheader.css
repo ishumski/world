@@ -1,0 +1,27 @@
+ul.nav {
+    list-style-type: none;
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+ul.nav li {
+    display: inline;
+}
+
+ul.nav a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 5px 60px;
+    background-color: rgb(177, 27, 0);
+    color: white;
+}
+
+img {
+    max-width: 100px;
+    margin-bottom: 20px;
+    float: left;
+}
+
+.nav {
+    float: right;
+}

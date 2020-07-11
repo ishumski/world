@@ -1,0 +1,32 @@
+.parent {
+    background-color: cornflowerblue;
+    margin-top: 100px;
+    margin-left: 100px;
+    width: 500px;
+    height: 500px;
+    position: relative;
+    top: 200px;
+    z-index: 10;
+}
+
+.child1 {
+    background-color: rgb(120, 189, 74);
+    width: 100px;
+    height: 100px;
+}
+
+.child2 {
+    background-color: rgb(121, 24, 11);
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 200px;
+    left: 200px;
+}
+
+.child3 {
+    background-color: rgb(145, 21, 150);
+    width: 100px;
+    height: 100px;
+    position: fixed;
+}

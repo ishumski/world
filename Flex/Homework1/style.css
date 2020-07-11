@@ -1,0 +1,58 @@
+body {
+    background: white;
+}
+
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.menu {
+    border: 1px solid black;
+    background: hotpink;
+}
+
+.menu-navigation {
+    display: flex;
+    list-style-type: none;
+}
+
+.menu-navigation a {
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 5px;
+    background: pink;
+    margin: 15px;
+    padding: 10px;
+}
+
+.content {
+    display: flex;
+}
+
+.news,
+.sidebar {
+    border: 1px solid black;
+    padding: 15px;
+    margin-top: 25px;
+}
+
+.sidebar {
+    display: flex;
+    margin-left: 25px;
+    flex: 1;
+}
+
+.news {
+    flex: 4;
+}
+
+p {
+    text-align: justify;
+}
+
+footer {
+    background: plum;
+    height: 50px;
+    margin-top: 25px;
+}

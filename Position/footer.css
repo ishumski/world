@@ -1,4 +1,12 @@
 footer {
-    background-color: rgb(233, 93, 93);
-    color: hotpink;
+    background-color: rgb(159, 181, 221);
+    padding: 10px;
+}
+
+.down_art {
+    font-style: italic;
+}
+
+span {
+    font-style: italic;
 }

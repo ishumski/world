@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+    <title>Позиционирование</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <p>для того, чтобы залогениться нажмите кнопку</p>
+            <button id="open">Вход</button>
+        </nav>
+    </header>
+
+    <div class="modal" id='modal'>
+        <div class="modal-body">
+            <button class="modal-close" id="close">close</button>
+            <h3>Данные для входа:</h3>
+            <form action="/">
+                <p>
+                    <label for="email">Email:</label>
+                    <input type="email" name="email">
+                </p>
+                <p>
+                    <label for="pass">Password:</label>
+                    <input type="password" name="password">
+                </p>
+                <p>
+                    <button type="submit">Вход</button>
+                </p>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var button = document.getElementById('open');
+        var close = document.getElementById('close');
+        var modal = document.getElementById('modal');
+
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+            modal.style.display = 'block';
+        });
+
+        close.addEventListener('click', function(event) {
+            event.preventDefault();
+            modal.style.display = 'none';
+        });
+    </script>
+</body>
+
+</html>

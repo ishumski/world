@@ -1,0 +1,86 @@
+body {
+    padding: 60px;
+}
+
+a.button {
+    border: 1px solid rgb(0, 9, 0);
+    border-radius: 3px;
+    background-color: royalblue;
+    color: white;
+    padding: 4px;
+    text-decoration: none;
+    font-size: 1.3em;
+}
+
+a.button:hover {
+    border: 1px solid rgb(0, 9, 0);
+    border-radius: 3px;
+    background-color: rgb(0, 247, 255);
+    color: white;
+    padding: 4px;
+    text-decoration: none;
+    font-size: 1.3em;
+}
+
+span.button2 {
+    position: relative;
+    background-position: left top;
+}
+
+ul.nav {
+    list-style-type: none;
+    padding: 0px;
+    margin: 10px 0px;
+}
+
+
+/* ul.nav a {
+    display: block;
+    text-decoration: none;
+    background-color: cyan;
+    width: 100px;
+    margin: 10px;
+    border: 1px solid blueviolet;
+    font-size: large;
+    border-radius: 5px;
+    text-align: center;
+}
+
+ul.nav a:hover {
+    display: block;
+    text-decoration: none;
+    background-color: rgb(255, 0, 242);
+    width: 120px;
+    margin: 15px;
+    border: 1px solid rgb(0, 255, 234);
+    font-size: large;
+    border-radius: 5px;
+    text-align: center;
+} */
+
+ul.nav li {
+    display: inline;
+}
+
+ul.nav a {
+    text-decoration: none;
+    background-color: cyan;
+    width: 100px;
+    margin: 10px;
+    border: 1px solid blueviolet;
+    font-size: large;
+    border-radius: 5px;
+    text-align: center;
+}
+
+ul.nav a:hover {
+    display: inline;
+    text-decoration: none;
+    background-color: rgb(255, 0, 242);
+    width: 120px;
+    margin: 15px;
+    border: 1px solid rgb(0, 255, 234);
+    font-size: large;
+    border-radius: 5px;
+    text-align: center;
+}

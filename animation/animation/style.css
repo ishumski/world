@@ -1,0 +1,93 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    height: 100vh;
+    background-image: linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(0, 0, 0, 0)),
+        linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(255, 255, 255, 0)),
+        linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 0, 0));
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.circle {
+    border-radius: 50%;
+    background: #ffffff;
+    width: 50px;
+    height: 50px;
+    animation: y 1s linear infinite 0s both;
+}
+
+.wrapper:nth-of-type(2) {
+    animation-delay: 0.1s;
+}
+
+.wrapper:nth-of-type(3) {
+    animation-delay: 0.2s;
+}
+
+.wrapper:nth-of-type(4) {
+    animation-delay: 0.3s;
+}
+
+.wrapper:nth-of-type(5) {
+    animation-delay: 0.4s;
+}
+
+
+.circle-1 {
+}
+.circle-2 {
+    width: 40px;
+    height: 40px;
+    opacity: 0.8;
+    animation-delay: 0.1s;
+}
+.circle-3 {
+    width: 30px;
+    height: 30px;
+    opacity: 0.6;
+    animation-delay: 0.2s;
+}
+.circle-4 {
+    width: 20px;
+    height: 20px;
+    opacity: 0.4;
+    animation-delay: 0.3s;
+}
+.circle-5 {
+    width: 10px;
+    height: 10px;
+    opacity: 0.2;
+    animation-delay: 0.4s;
+}
+.wrapper {
+    position: absolute;
+    animation: x 1s ease-in-out alternate infinite 0s both;
+}
+
+@keyframes x {
+    0% {
+        transform: translate(-100px, 0px);
+    
+    }
+    100% {
+        transform: translate(100px,0px );
+    }
+}
+@keyframes y {
+    0%, 50%, 100% {
+        transform: translate(0px, 0px);
+    }
+    25% {
+        transform: translate(0px, 50px);
+    }
+    75% {
+        transform: translate(0px, -50px);
+    }
+}
+

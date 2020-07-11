@@ -1,0 +1,56 @@
+body {
+    background-color: greenyellow;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    position: relative;
+    padding: 15px 0;
+    background-color: hotpink;
+}
+
+nav button {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+}
+
+button {
+    padding: 5px 20px;
+    border: 1px solid hotpink;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+nav {
+    width: 50%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.modal {
+    /* display: none; */
+}
+
+.modal-body {
+    position: fixed;
+    top: 20%;
+    left: 15%;
+    right: 25%;
+    background-color: indigo;
+    padding: 15px;
+    box-sizing: border-box;
+    color: ivory;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+}
+
+form button {
+    position: absolute;
+    bottom: 15%;
+    right: 25px;
+}

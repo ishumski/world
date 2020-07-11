@@ -1,0 +1,12 @@
+footer {
+    background-color: rgb(177, 27, 0);
+    margin: 0px 0px 0px 0px;
+    padding: 20px 10px;
+    box-sizing: border-box;
+}
+
+footer p,
+footer li,
+footer a {
+    color: white;
+}

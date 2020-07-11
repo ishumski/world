@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.menu {
+    background: rgb(37, 37, 37);
+    margin-bottom: 0px;
+}
+
+ul>li {
+    list-style-type: none;
+}
+
+ul.d-flex.flex-row {
+    margin: 0px;
+    padding: 0px;
+}
+
+.p-2:hover {
+    background: black;
+    color: white!important;
+}
+
+a.text-secondary:hover {
+    color: #ffffff!important;
+}
+
+.text-secondary:hover {
+    text-decoration: none;
+}
+
+div .call-to .col-md-12 {
+    padding: 50px 0px;
+    background: rgb(219, 219, 219);
+}
+
+.image {
+    height: 150px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.example {
+    padding: 25px 0px;
+}

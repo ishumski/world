@@ -1,0 +1,659 @@
+body {
+    background-color: rgb(207, 205, 205);
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: auto 1fr 1fr 1fr;
+    grid-template-rows: repeat(8, auto);
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.big-block {
+    display: grid;
+    padding: 16px;
+    color: black;
+    background-color: white;
+    place-items: center;
+}
+
+.grid-block {
+    display: grid;
+    padding: 16px;
+    background-color: white;
+    color: #777;
+    place-items: center;
+}
+
+.top-menu {
+    margin-top: -15px;
+}
+
+.down-menu {
+    margin-bottom: -15px;
+}
+
+.blue-block {
+    display: grid;
+    padding: 16px;
+    background-color: rgb(83, 83, 255);
+    color: white;
+    place-items: center;
+}
+
+.grid-menu {
+    display: grid;
+    align-items: center;
+    padding-right: 16px;
+    font-weight: bold;
+}
+
+span {
+    font-size: x-large;
+}
+
+
+/* ************************************
+***************images******************
+************************************ */
+
+img {
+    width: 100px;
+}
+
+
+/* ************************************
+**********properties****************
+************************************ */
+
+.fake {
+    border-bottom: 1px solid rgb(172, 172, 172);
+}
+
+.battery {
+    grid-area: 2/1/3/2;
+    border-bottom: 1px solid rgb(172, 172, 172);
+    align-items: center;
+}
+
+.megapixels {
+    grid-area: 3/1/4/2;
+    border-bottom: 1px solid rgb(172, 172, 172);
+}
+
+.connection {
+    grid-area: 4/1/5/2;
+    border-bottom: 1px solid rgb(172, 172, 172);
+}
+
+.shutter-speed {
+    grid-area: 5/1/6/2;
+    border-bottom: 1px solid rgb(172, 172, 172);
+}
+
+.weight {
+    grid-area: 6/1/7/2;
+    border-bottom: 1px solid rgb(172, 172, 172);
+}
+
+.customer-ratings {
+    grid-area: 7/1/8/2;
+    border-bottom: 1px solid rgb(172, 172, 172);
+}
+
+.price {
+    grid-area: 8/1/9/2;
+}
+
+
+/* ************************************
+**********Fine Camera****************
+************************************ */
+
+.item-1 {
+    grid-area: 1/2/2/3;
+    border-bottom: 1px solid rgb(172, 172, 172);
+}
+
+.battery-fine {
+    grid-area: 2/2/3/3;
+    border-bottom: 1px solid rgb(172, 172, 172);
+}
+
+.megapixels-fine {
+    grid-area: 3/2/4/3;
+    border-bottom: 1px solid rgb(172, 172, 172);
+}
+
+.connection-fine {
+    grid-area: 4/2/5/3;
+    border-bottom: 1px solid rgb(172, 172, 172);
+}
+
+.shutter-speed-fine {
+    grid-area: 5/2/6/3;
+    border-bottom: 1px solid rgb(172, 172, 172);
+}
+
+.weight-fine {
+    grid-area: 6/2/7/3;
+    border-bottom: 1px solid rgb(172, 172, 172);
+}
+
+.customer-ratings-fine {
+    grid-area: 7/2/8/3;
+    border-bottom: 1px solid rgb(172, 172, 172);
+}
+
+.price-fine {
+    grid-area: 8/2/9/3;
+}
+
+
+/* ************************************
+**********Ultra Camera****************
+************************************ */
+
+.item-2 {
+    grid-area: 1/3/2/4;
+    border-bottom: 1px solid rgb(172, 172, 172);
+}
+
+.battery-ultra {
+    grid-area: 2/3/3/4;
+    border-bottom: 1px solid rgb(172, 172, 172);
+}
+
+.megapixels-ultra {
+    grid-area: 3/3/4/4;
+    border-bottom: 1px solid rgb(172, 172, 172);
+}
+
+.connection-ultra {
+    grid-area: 4/3/5/4;
+    border-bottom: 1px solid rgb(172, 172, 172);
+}
+
+.shutter-speed-ultra {
+    grid-area: 5/3/6/4;
+    border-bottom: 1px solid rgb(172, 172, 172);
+}
+
+.weight-ultra {
+    grid-area: 6/3/7/4;
+    border-bottom: 1px solid rgb(172, 172, 172);
+}
+
+.customer-ratings-ultra {
+    grid-area: 7/3/8/4;
+    border-bottom: 1px solid rgb(172, 172, 172);
+}
+
+.price-ultra {
+    grid-area: 8/3/9/4;
+}
+
+
+/* ************************************
+*****************CHEESE****************
+************************************ */
+
+.item-3 {
+    grid-area: 1/4/2/5;
+    border-bottom: 1px solid rgb(172, 172, 172);
+}
+
+.battery-cheese {
+    grid-area: 2/4/3/5;
+    border-bottom: 1px solid rgb(172, 172, 172);
+}
+
+.megapixels-cheese {
+    grid-area: 3/4/4/5;
+    border-bottom: 1px solid rgb(172, 172, 172);
+}
+
+.connection-cheese {
+    grid-area: 4/4/5/5;
+    border-bottom: 1px solid rgb(172, 172, 172);
+}
+
+.shutter-speed-cheese {
+    grid-area: 5/4/6/5;
+    border-bottom: 1px solid rgb(172, 172, 172);
+}
+
+.weight-cheese {
+    grid-area: 6/4/7/5;
+    border-bottom: 1px solid rgb(172, 172, 172);
+}
+
+.customer-ratings-cheese {
+    grid-area: 7/4/8/5;
+    border-bottom: 1px solid rgb(172, 172, 172);
+}
+
+.price-cheese {
+    grid-area: 8/4/9/5;
+}
+
+
+/* tablet 786px */
+
+@media screen and (max-width: 800px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(15, auto);
+        width: 100%;
+        max-width: 800px;
+        margin: 0px auto;
+        padding: 16px;
+    }
+    .grid-block {
+        display: grid;
+        place-items: start;
+        border: none;
+        background-color: rgb(207, 205, 205);
+        border-top: 1px solid black;
+        padding: 5px 10px;
+    }
+    .grid-menu {
+        display: grid;
+        border: none;
+        margin-top: 25px;
+        padding-left: 10px;
+        padding-bottom: 5px;
+    }
+    .big-block {
+        display: grid;
+        padding: 0px 10px;
+        border: none;
+        place-items: start;
+    }
+    .item-3,
+    .big-block {
+        background-color: rgb(207, 205, 205);
+    }
+    .blue-block {
+        display: grid;
+        place-items: start;
+        background-color: white;
+        color: black;
+        padding: 5px 0px 0px 10px;
+    }
+    .border-block {
+        border-top: 1px solid black;
+        border-bottom: none;
+        color: #777;
+    }
+    .top-menu,
+    .down-menu {
+        margin: 0px;
+    }
+    [class|=price] {
+        color: black;
+    }
+    /* *************************************
+    ***********first-column**************
+    ************************************* */
+    .item-1 {
+        display: grid;
+        grid-area: 1/1/2/2;
+        background-color: rgb(207, 205, 205);
+    }
+    .battery {
+        display: grid;
+        grid-area: 2/1/3/2;
+    }
+    .battery-fine {
+        display: grid;
+        grid-area: 3/1/4/2;
+        background-color: rgb(207, 205, 205);
+    }
+    .megapixels {
+        display: grid;
+        grid-area: 4/1/5/2;
+        background-color: rgb(207, 205, 205);
+    }
+    .megapixels-fine {
+        display: grid;
+        grid-area: 5/1/6/2;
+        background-color: rgb(207, 205, 205);
+    }
+    .connection {
+        display: grid;
+        grid-area: 6/1/7/2;
+        background-color: rgb(207, 205, 205);
+    }
+    .connection-fine {
+        display: grid;
+        grid-area: 7/1/8/2;
+        background-color: rgb(207, 205, 205);
+    }
+    .shutter-speed {
+        display: grid;
+        grid-area: 8/1/9/2;
+        background-color: rgb(207, 205, 205);
+    }
+    .shutter-speed-fine {
+        display: grid;
+        grid-area: 9/1/10/2;
+        background-color: rgb(207, 205, 205);
+    }
+    .weight {
+        display: grid;
+        grid-area: 10/1/11/2;
+        background-color: rgb(207, 205, 205);
+    }
+    .weight-fine {
+        display: grid;
+        grid-area: 11/1/12/2;
+        background-color: rgb(207, 205, 205);
+    }
+    .customer-ratings {
+        display: grid;
+        grid-area: 12/1/13/2;
+        background-color: rgb(207, 205, 205);
+    }
+    .customer-ratings-fine {
+        display: grid;
+        grid-area: 13/1/14/2;
+        background-color: rgb(207, 205, 205);
+    }
+    .price {
+        display: grid;
+        grid-area: 14/1/15/2;
+        background-color: rgb(207, 205, 205);
+    }
+    .price-fine {
+        display: grid;
+        grid-area: 15/1/16/2;
+        background-color: rgb(207, 205, 205);
+    }
+    /* *************************************
+    ***********second-column**************
+    ************************************* */
+    .item-2 {
+        display: grid;
+        grid-area: 1/2/2/3;
+    }
+    .empty-box-1 {
+        display: grid;
+        grid-area: 2/2/3/3;
+        background-color: white;
+    }
+    .battery-ultra {
+        display: grid;
+        grid-area: 3/2/4/3;
+    }
+    .empty-box-2 {
+        display: grid;
+        grid-area: 4/2/5/3;
+        background-color: white;
+    }
+    .megapixels-ultra {
+        display: grid;
+        grid-area: 5/2/6/3;
+    }
+    .empty-box-3 {
+        display: grid;
+        grid-area: 6/2/7/3;
+        background-color: white;
+    }
+    .connection-ultra {
+        display: grid;
+        grid-area: 7/2/8/3;
+    }
+    .empty-box-4 {
+        display: grid;
+        grid-area: 8/2/9/3;
+        background-color: white;
+    }
+    .shutter-speed-ultra {
+        display: grid;
+        grid-area: 9/2/10/3;
+    }
+    .empty-box-5 {
+        display: grid;
+        grid-area: 10/2/11/3;
+        background-color: white;
+    }
+    .weight-ultra {
+        display: grid;
+        grid-area: 11/2/12/3;
+    }
+    .empty-box-6 {
+        display: grid;
+        grid-area: 12/2/13/3;
+        background-color: white;
+    }
+    .customer-ratings-ultra {
+        display: grid;
+        grid-area: 13/2/14/3;
+    }
+    .empty-box-7 {
+        display: grid;
+        grid-area: 14/2/15/3;
+        background-color: white;
+    }
+    .price-ultra {
+        display: grid;
+        grid-area: 15/2/16/3;
+    }
+    /* *************************************
+    **************third-column**************
+    ************************************* */
+    .item-3 {
+        display: grid;
+        grid-area: 1/3/2/4;
+    }
+    .battery-cheese {
+        display: grid;
+        grid-area: 3/3/4/4;
+    }
+    .megapixels-cheese {
+        display: grid;
+        grid-area: 5/3/6/4;
+    }
+    .connection-cheese {
+        display: grid;
+        grid-area: 7/3/8/4;
+    }
+    .shutter-speed-cheese {
+        display: grid;
+        grid-area: 9/3/10/4;
+    }
+    .weight-cheese {
+        display: grid;
+        grid-area: 11/3/12/4;
+    }
+    .customer-ratings-cheese {
+        display: grid;
+        grid-area: 13/3/14/4;
+    }
+    .price-cheese {
+        display: grid;
+        grid-area: 15/3/16/4;
+    }
+}
+
+
+/* **************************************************
+*******************mobile-vercion*****************
+************************************************** */
+
+@media screen and (max-width: 660px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(15, auto);
+        width: 100%;
+        max-width: 660px;
+        margin: 0px auto;
+        padding: 16px;
+        background-color: rgb(207, 205, 205);
+    }
+    .grid-block {
+        display: grid;
+        background-color: rgb(207, 205, 205);
+        justify-items: center;
+    }
+    .big-block {
+        display: grid;
+        background-color: rgb(207, 205, 205);
+        justify-items: center;
+    }
+    .grid-menu {
+        display: grid;
+        background-color: rgb(207, 205, 205);
+        justify-items: center;
+    }
+    .border-block {
+        display: grid;
+        background-color: rgb(207, 205, 205);
+        justify-items: center;
+    }
+    [class|=empty-box] {
+        display: grid;
+        grid-area: none;
+    }
+    /* **************************************************
+*******************first-mobile-column*****************
+************************************************** */
+    .item-1 {
+        display: grid;
+        grid-area: 1/1/2/2;
+    }
+    .battery-fine {
+        display: grid;
+        grid-area: 3/1/4/2;
+    }
+    .megapixels-fine {
+        display: grid;
+        grid-area: 5/1/6/2;
+    }
+    .connection-fine {
+        display: grid;
+        grid-area: 7/1/8/2;
+    }
+    .shutter-speed-fine {
+        display: grid;
+        grid-area: 9/1/10/2;
+    }
+    .weight-fine {
+        display: grid;
+        grid-area: 11/1/12/2;
+    }
+    .customer-ratings-fine {
+        display: grid;
+        grid-area: 13/1/14/2;
+    }
+    .price-fine {
+        display: grid;
+        grid-area: 15/1/16/2;
+    }
+    /* **************************************************
+*******************second-mobile-column*****************
+************************************************** */
+    .item-2 {
+        display: grid;
+        grid-area: 1/2/2/3;
+    }
+    .battery {
+        display: grid;
+        grid-area: 2/1/3/4;
+    }
+    .battery-ultra {
+        display: grid;
+        grid-area: 3/2/4/3;
+    }
+    .megapixels {
+        display: grid;
+        grid-area: 4/1/5/4;
+    }
+    .megapixels-ultra {
+        display: grid;
+        grid-area: 5/2/6/3;
+    }
+    .connection {
+        display: grid;
+        grid-area: 6/1/7/4;
+    }
+    .connection-ultra {
+        display: grid;
+        grid-area: 7/2/8/3;
+    }
+    .shutter-speed {
+        display: grid;
+        grid-area: 8/1/9/4;
+    }
+    .shutter-speed-ultra {
+        display: grid;
+        grid-area: 9/2/10/3;
+    }
+    .weight {
+        display: grid;
+        grid-area: 10/1/11/4;
+    }
+    .weight-ultra {
+        display: grid;
+        grid-area: 11/2/12/3;
+    }
+    .customer-ratings {
+        display: grid;
+        grid-area: 12/1/13/4;
+    }
+    .customer-ratings-ultra {
+        display: grid;
+        grid-area: 13/2/14/3;
+    }
+    .price {
+        display: grid;
+        grid-area: 14/1/15/4;
+    }
+    .price-ultra {
+        display: grid;
+        grid-area: 15/2/16/3;
+    }
+    /* **************************************************
+*******************third-mobile-column*****************
+************************************************** */
+    .item-3 {
+        display: grid;
+        grid-area: 1/3/2/4;
+    }
+    .battery-cheese {
+        display: grid;
+        grid-area: 3/3/4/4;
+    }
+    .megapixels-cheese {
+        display: grid;
+        grid-area: 5/3/6/4;
+    }
+    .connection-cheese {
+        display: grid;
+        grid-area: 7/3/8/4;
+    }
+    .shutter-speed-cheese {
+        display: grid;
+        grid-area: 9/3/10/4;
+    }
+    .weight-cheese {
+        display: grid;
+        grid-area: 11/3/12/4;
+    }
+    .customer-ratings-cheese {
+        display: grid;
+        grid-area: 13/3/14/4;
+    }
+    .price-cheese {
+        display: grid;
+        grid-area: 15/3/16/4;
+    }
+}

@@ -1,0 +1,19 @@
+.nav-link {
+    padding: 0px;
+}
+
+.bg-white {
+    background: rgb(241, 241, 241)!important;
+}
+
+.d-block {
+    width: 1000px;
+    height: 530px;
+}
+
+div>h3,
+p {
+    color: black;
+    font-size: large;
+    font-weight: bold;
+}

@@ -1,0 +1,73 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.menu {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+.menu__bcg {
+    background-image: url(yumi.jpg);
+    background-repeat: no-repeat;
+}
+.container {
+    width: 100px;
+    transition: all 2s ease 0.1s;
+    &:hover {
+        width: 300px;
+    }
+    &:hover .menu__content ul a {
+        display: inline-block;
+        position: absolute;
+        padding: 15px 0px 0px 20px;
+        animation: move 3s ease;
+    }
+    & li:hover a {
+        color: hotpink;
+    }
+    & ul li:hover {
+        background: black;
+        transition: all 1s ease 0s;
+    }
+    & li:hover svg {
+        fill: hotpink;
+    }
+}
+.menu__content ul a {
+    text-decoration: none;
+    color: #ffffff;
+    display: none;
+}
+.menu__content-bcg {
+    background-color: hotpink;
+}
+.menu__content {
+    height: inherit;
+    padding: 25px 0px;
+}
+.menu__content ul li {
+    list-style-type: none;
+    padding: 10px 0px 10px 25px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+svg {
+    width: 50px;
+    height: 50px;
+    fill: #ffffff;
+}
+.menu__content:first-child:hover {
+    background-color: rgba(0, 0, 0, .5);
+    box-shadow: 0 0 0 99999px rgba(0, 0, 0, .5);
+    z-index: -11;
+}
+.nav {
+    z-index: 100;
+}

@@ -1,0 +1,70 @@
+body {
+    background-image: url('universe.png');
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.moon {
+    position: absolute;
+    width: 550px;
+    height: 400px;
+}
+
+.child-container>img {
+    position: absolute;
+    left: 40%;
+    top: 45%;
+    width: 50px;
+    height: 50px;
+    transition: all 1s ease;
+}
+
+/* .child-container>img:hover {
+    transform: translate(0px, 0px);
+} */
+
+.child-container:hover .starship8 {
+    transform: translate(250px, -250px);
+    transition-delay: 0s;
+}
+
+.child-container:hover .starship7 {
+    transform: translate(0px, -250px);
+    transition-delay: 0.2s;
+}
+
+/*.starship6 {
+    transform: translate(-250px, -250px);
+    transition: all 1s ease 0s;
+}
+
+.starship5 {
+    transform: translate(-250px, 0px);
+    transition: all 1s ease 0s;
+}
+
+.starship4 {
+    transform: translate(-250px, 250px);
+    transition: all 0.8s ease 0s;
+}
+
+.starship3 {
+    transform: translate(0px, 250px);
+    transition: all 1s ease 0s;
+}
+
+.starship2 {
+    transform: translate(250px, 250px);
+    transition: all 1s ease 0s;
+}
+
+.starship1 {
+    transform: translate(250px, 0px);
+    transition: all 1s ease 0s;
+} */

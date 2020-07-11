@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.child-container {
+    display: flex;
+    flex-grow: 1;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.item-1 {
+    background: pink;
+}
+
+.item-2 {
+    background: red;
+}
+
+.item-3 {
+    background: green;
+    order: 1;
+}
+
+.item-4 {
+    background: lime;
+    height: 100px;
+}
+
+.item-5 {
+    background: hotpink;
+    flex-grow: 1;
+}
+
+.item-6 {
+    background: violet;
+    height: 100px;
+}
+
+.item-7 {
+    background: purple;
+}

@@ -1,0 +1,63 @@
+.container {
+    display: flex;
+    min-height: 100vh;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+[class*=item] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item1,
+.item5 {
+    flex: 1;
+    background: pink;
+    color: white;
+}
+
+.item2,
+.item3 {
+    width: 150px;
+    color: white;
+    background: red;
+}
+
+.item3 {
+    order: 1;
+}
+
+.item4 {
+    flex: 1;
+    background: white;
+}
+
+.child {
+    flex: 6;
+    display: flex;
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0 auto;
+    }
+    .child {
+        display: flex;
+        flex-direction: column;
+    }
+    .item2,
+    .item3 {
+        width: auto;
+        height: 100px;
+        color: white;
+        background: red;
+    }
+    .item2 {
+        order: 1;
+    }
+}

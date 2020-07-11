@@ -1,0 +1,45 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.container {
+    width: 1200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    overflow: hidden;
+}
+.block {
+    width: 700px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.image {
+    position: relative;
+    height: 400px;
+    transition-duration: 3s;
+}
+p {
+    position: absolute;
+    width: inherit;
+    top: -18px;
+    padding: 5px;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 18px;
+    background-color: rgba(20, 0, 136, 0.26);
+    // display: none;
+    transition: all;
+    transition-duration: 2s;
+}
+.block:hover p {
+    top: 0px;
+}
+
+.block:hover .image {
+    transition-duration: 3s;
+    transform: translateX(-200px);
+}

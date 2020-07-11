@@ -1,0 +1,21 @@
+.container-fluid {}
+
+.style {
+    border: 1px solid black;
+    border-radius: 5px;
+    background: hotpink;
+    margin-top: 25px;
+}
+
+.header,
+.footer {
+    height: 100px;
+}
+
+[class*=main] {
+    height: 250px;
+}
+
+[class*=aside] {
+    height: 150px;
+}
