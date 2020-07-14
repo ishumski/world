@@ -41,16 +41,22 @@
 //     document.write ('пора тусить на Мальдивах');
 // }
 
-function checkIsOdd(number) {
-    if (number % 2 === 0) {
-        return true;
-    }
+// function checkIsOdd(number) {
+//     if (number % 2 === 0) {
+//         return true;
+//     }
 
-    return false;
-}
+//     return false;
+// }
 
-const number = 2;
-const result = checkIsOdd(number);
+// const number = 2;
+// const result = checkIsOdd(number);
 
-document.write(result);
+// document.write(result);
+
+
+
+let currentYear = 2020;
+let a = ++currentYear;
+alert (a);
 
