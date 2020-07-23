@@ -56,7 +56,11 @@
 
 
 
-let currentYear = 2020;
-let a = ++currentYear;
-alert (a);
+// let currentYear = 2020;
+// let a = ++currentYear;
+// alert (a);
+
+const literBeer = prompt('Сколько литров пиваса брать?', 100);
+const quantityLiter = undefined;
+alert (`Бери ${literBeer}литров, непрогадаешь`);
 
