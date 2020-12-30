@@ -9,6 +9,8 @@ const MINUS_OPERATOR = "-";//объявляем переменную опера�
 const MULTIPLY_OPERATOR = "*";// объявляем переменную оператора *
 const DIVISION_OPERATOR = "/";// объявляем переменную оператора /
 const EQUALS_OPERATOR = "=";//объявляем переменную оператора =
+const DEL_VALUE = "DEL";
+const MULTIPLIER = 10000000000000000;
 const OPERATOR = [PLUS_OPERATOR, MINUS_OPERATOR, MULTIPLY_OPERATOR, DIVISION_OPERATOR];//массив для хранения наших операторов, чтобы мы могли вести поиск
 
 /*Когда мы нажимаем на кнопки buttonValue = button.getAttribute("value"), мы получаем значение этих кпопок в виде чисел.
@@ -20,6 +22,11 @@ const OPERATOR = [PLUS_OPERATOR, MINUS_OPERATOR, MULTIPLY_OPERATOR, DIVISION_OPE
 function addTextToScreen(text) {
     screen.textContent += text;//      1. screen.textContent += buttonValue 
     subScreen.textContent += text;//   2. subScreen.textContent += buttonValue
+}
+
+function deleteLastFromScreens() {
+    subScreen.textContent = subScreen.textContent.slice(0, subScreen.textContent.length - 1);
+    screen.textContent = screen.textContent.slice(0, screen.textContent.length - 1);
 }
 
 let left;// объявляем переменную уже введенных цифр
@@ -52,6 +59,16 @@ buttons.forEach(button => {//запускаем метод для каждой �
                 lastOperator = undefined;//очищаем переменную последнего введенного оператора(математического знака)
                 return;
             }
+
+            if (buttonValue === DEL_VALUE) {
+
+                if (!isLastOperator && lastOperator !== EQUALS_OPERATOR) {
+                    deleteLastFromScreens();
+                }
+
+                return;
+            }
+
             if (lastOperator === EQUALS_OPERATOR) {//проверка последнего нажатого оператора, идентичен ли он "=", возращает boolean
                 screen.textContent = buttonValue;// выводим на гл. экран значение нажатой кнопки(наши цифры)
                 subScreen.textContent += buttonValue;//выводим на верхний экран цифры(значени value)
@@ -63,6 +80,10 @@ buttons.forEach(button => {//запускаем метод для каждой �
                 screen.textContent = buttonValue;// выводим на гл. экран значение нажатой кнопки(наши цифры)
                 subScreen.textContent += buttonValue;// выводим на верхний экран и цифры(значени value) и оператор
                 return;
+            }
+
+            if (screen.textContent.length > MAX_SCREEN_LENGTH) {//проверка экрана на количество вводимых символов, если оно больше 16, то вернуть введенные символы
+                return;//останавливыем выполнение нашей ф-ции, присваивается значение undefined
             }
 
             addTextToScreen(buttonValue);//вызываем нашу функцию, которая добавляет всё на экран(мояснения см. выше)
@@ -79,6 +100,9 @@ buttons.forEach(button => {//запускаем метод для каждой �
                 }
                 return;
             }
+            if (subScreen.textContent.slice(-1) === DOT_OPERATOR) {
+                deleteLastFromScreens();
+            }
 
             /*Если нажата кнопка арифметич. оператора (isLastOperator) || длина введенных символов на верхнем экране равно 0 ||
             (значение для переменной уже введенных цифр не было присвоено && нажатая кнопка оператора идентична "=")*/
@@ -87,29 +111,41 @@ buttons.forEach(button => {//запускаем метод для каждой �
             }
 
             if (left !== undefined) {// если переменной уже введенных цифр было присвоено значение
-                right = +screen.textContent;//переменной последнего введенного числа присваиваем значение, преобразованное к числу посредством унарного плюса
+                right = (+screen.textContent) * MULTIPLIER;//переменной последнего введенного числа присваиваем значение, преобразованное к числу посредством унарного плюса
+                left *= MULTIPLIER;
+                let result;
+
                 switch (lastOperator) {//указываем переменную арифметических знаков(последний оператор), сейчас его значение undefined
                     case PLUS_OPERATOR://сравниваем lastOperator, если он равен PLUS_OPERATOR выполняем операцию сложения
-                        screen.textContent = left + right;
+                        result = left + right;
                         break;
                     case MINUS_OPERATOR://сравниваем lastOperator, если он равен MINUS_OPERATOR выполняем операцию вычитания
-                        screen.textContent = left - right;
+                        result = left - right;
                         break;
                     case MULTIPLY_OPERATOR://сравниваем lastOperator, если он равен MULTIPLY_OPERATOR выполняем операцию умножения
-                        screen.textContent = left * right;
+                        result = (left * right) / MULTIPLIER;
                         break;
                     case DIVISION_OPERATOR://сравниваем lastOperator, если он равен DIVISION_OPERATOR выполняем операцию деления
-                        screen.textContent = left / right;
+                        result = (left / right) * MULTIPLIER;
                         break;
                     default:
                         return;
                 }
+                screen.textContent = result / MULTIPLIER;
 
                 if (buttonOperator === EQUALS_OPERATOR) {//если buttonOperator идентична EQUALS_OPERATOR производим чистку
-                    subScreen.textContent = "";// очищаем наш верхний экран
+                    const liElement = document.createElement("li");
+                    const orderList = document.querySelector("ol");
+
+                    orderList.appendChild(liElement);
+                    liElement.textContent = `${subScreen.textContent} = ${screen.textContent}`;
+
+                    subScreen.textContent = "";
+
                     left = undefined;// очищаем переменные
                     right = undefined;// очищаем переменные
                     lastOperator = buttonOperator;// последний оператор является EQUALS_OPERATOR
+
                     return;
                 }
             }
