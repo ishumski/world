@@ -1,0 +1,15 @@
+$color_light_grey: #f8f9fa;
+$color_white: #ffffff;
+$spacing_small: 10px;
+$spacing_medium: 15px;
+$spacing_large: 30px;
+
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+    background-color: $color_light_grey;
+}
