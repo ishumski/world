@@ -5,6 +5,6 @@ const arrOfLinks = document.querySelectorAll("a");
 arrOfLinks.forEach((elem) => {
 
     elem.addEventListener("click", () => {
-        elem.innerHTML = `${elem.innerHTML + elem.href}`;
+        elem.innerHTML = `${elem.innerHTML} (${elem.href})`;
     })
 })
