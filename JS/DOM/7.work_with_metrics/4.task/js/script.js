@@ -7,6 +7,6 @@ p.style.border = "5px solid black";
 p.style.padding = "55px 0px";
 
 button.addEventListener("click", () => {
-    const height = p.clientHeight;
+    const height = p.offsetHeight;
     console.log(height);
 })
