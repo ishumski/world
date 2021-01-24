@@ -6,6 +6,6 @@ const button = document.querySelector("button");
 p.style.border = "3px solid black";
 
 button.addEventListener("click", () => {
-    const width = p.clientWidth;
+    const width = p.offsetWidth;
     console.log(width);
 })
