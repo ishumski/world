@@ -2,7 +2,7 @@
 
 function isNumberInString(str) {
 
-    return str.match(/\d/gi) ? true : false;
+    return (/\d/gi).test(str);
 }
 
-console.log(isNumberInString("zdfefAf 9 dsdfs"));
+console.log(isNumberInString("zdfefAf ds1dfs"));

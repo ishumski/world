@@ -5,6 +5,6 @@ const arrOfWords = ["Column", "coconut", "Salem", "Cox", "wild"];
 
 function arrFilter(arr) {
 
-    return newArr = arr.filter((elem) => !elem[0].includes("C"));
+    return newArr = arr.filter((elem) => !(/C/).test(elem[0]));
 }
 console.log(arrFilter(arrOfWords));

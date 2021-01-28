@@ -4,8 +4,7 @@ const loremStr = "La orem software like Aldus PageMaker inluding c versions of L
 
 function isCurrentLettersInString(str) {
 
-    return str.match(/[a{1}].*[c{1}]/g) ? true : false;
-
+    return (/a.*c/g).test(str);
 }
 
 console.log(isCurrentLettersInString(loremStr));
