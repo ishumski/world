@@ -1,0 +1,35 @@
+.slider-amount {
+    position: relative;
+   
+}
+
+#amount {
+    height: 50px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    background-color: rgb(255, 227, 255);
+    outline: none;
+    font-size: 25px;
+}
+#amount:focus,
+#amount:hover {
+    border: 2px solid rgb(167, 0, 161);
+}
+
+#slider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
