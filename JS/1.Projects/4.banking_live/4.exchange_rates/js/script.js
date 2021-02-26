@@ -1,14 +1,50 @@
-const span = document.querySelector("span");
+//рендер таблицы для получения курсов валют по API
+const exchangeRates = document.querySelector(".exchange__rates");
+
+const table = document.createElement("table");
+
+const thead = document.createElement("thead");
+const tbody = document.createElement("tbody");
+
+const headers = ["Валюта", "Покупка", "Продажа"];
+const headerRow = document.createElement("tr");
+
+headers.forEach(elem => {
+    const header = document.createElement("th");
+    const textNode = document.createTextNode(elem);
+
+    header.appendChild(textNode);
+    headerRow.appendChild(header);
+})
+thead.appendChild(headerRow)
+table.appendChild(thead);
+exchangeRates.appendChild(table);
+
+
+const BANK_RATE = 1.15;
+
 fetch("https://www.nbrb.by/api/exrates/rates?periodicity=0")
     .then(response => response.json())
     .then(result => {
-        result.forEach(elem => {
-            let { Cur_ID, Cur_Abbreviation, Cur_Scale, Cur_Name, Cur_OfficialRate } = elem;
 
-            if (Cur_ID == 145 || Cur_ID == 292 || Cur_ID == 143 || Cur_ID == 293 || Cur_ID == 298) {
+        const rows = result.map((currency) => {
+            let { Cur_ID, Cur_Abbreviation, Cur_Scale, Cur_Name, Cur_OfficialRate } = currency;
 
-                let data = `${Cur_Scale} ${Cur_Abbreviation}  ${Cur_Name}  ${Cur_OfficialRate}`
-                return console.log(data);
+            if ([145, 292, 143, 293, 298].includes(Cur_ID)) {
+
+                return `
+                    <tr>
+                        <td>${Cur_Scale} ${Cur_Name} (${Cur_Abbreviation})</td>
+                        <td>${Cur_OfficialRate}</td>
+                        <td>${(Cur_OfficialRate + ((Cur_OfficialRate * BANK_RATE) / 100)).toFixed(4)}</td>
+                    </tr>
+
+                    `
             }
         });
-    })
+
+        tbody.innerHTML = rows.join("");
+        table.appendChild(tbody);
+    });
+
+exchangeRates.appendChild(table);
