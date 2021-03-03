@@ -77,7 +77,7 @@ container.innerHTML = `
     `;
 
 
-let inputs = document.querySelectorAll("input");
+let inputs = Array.from(document.querySelectorAll("input"));
 
 const BYN = document.querySelector("#BYN");
 
@@ -95,35 +95,69 @@ const USD = document.querySelector("#USD");
 
 // }
 
+/*возвращает знчения из массива с курсами */
+// function currenciesValues(arr) {
+//     arr.map((currency) => {
+//         let { Cur_Abbreviation, Cur_ID, Cur_Name, Cur_OfficialRate, Cur_Scale, Date } = currency;
+//         return Cur_OfficialRate;
+//     })
+// }
+// currenciesValues(currencies);
+/*
+1. получить все инпут
+2. на каждый инпут навесить обработчик "input", при изменении значения что-то желать
+3. должен фильровать значение, на которых не сработал обработчик, но BYN и остальные валюты работают по разному
+4. если валюта не BYN то elem.value = 
+сумму в активном и*(baseRate(значение валюты активного инпута event.target.Cur_OfficialRate)/quotedRate(котируемая валюта в которую хотим перевести baseRate))
+*/
+
 inputs.forEach((input) => {
 
     input.addEventListener("input", (event) => {
         event.preventDefault();
+        let filtered = inputs.filter((elem) => (elem.id !== event.target.id));
+        console.log(filtered);
 
+        filtered.map((elem) => {
 
+            currencies.forEach((currency) => {
 
-        currencies.map((currency) => {
-            // console.log(input.value)
-            let { Cur_Abbreviation, Cur_ID, Cur_Name, Cur_OfficialRate, Cur_Scale, Date } = currency;
+                let { Cur_Abbreviation, Cur_ID, Cur_Name, Cur_OfficialRate, Cur_Scale, Date } = currency;
 
-            input.querySelectorAll("input").value = Cur_OfficialRate * event.target.value;
+                if (elem.id === Cur_Abbreviation) {
+                    elem.value = parseFloat(((event.target.value / Cur_OfficialRate) * Cur_Scale).toFixed(2));
+                }
+                if (elem.id === "RUB" && Cur_Abbreviation === "RUB") {
+                    elem.value = parseFloat(((event.target.value / Cur_OfficialRate) * Cur_Scale).toFixed(2));
+                }
+                if (elem.id === "PLN" && Cur_Abbreviation === "PLN") {
+                    elem.value = parseFloat(((event.target.value / Cur_OfficialRate) * Cur_Scale).toFixed(2));
+                }
+                // if (elem.id === "EUR" && Cur_Abbreviation === "USD") {
+                //     elem.value = event.target.value * (event.target.Cur_OfficialRate/ Cur_Abbreviation);
+                // }
 
-
-            if (event.target.id === Cur_Abbreviation) {
-
-                let result = parseFloat((event.target.value * Cur_OfficialRate).toFixed(2));
-                // input.value = result;
-                console.log(result);
-            }
-
-            
+            })
+            console.log(elem.value)
         })
 
+
+        // currencies.map((currency) => {
+
+        // let { Cur_Abbreviation, Cur_ID, Cur_Name, Cur_OfficialRate, Cur_Scale, Date } = currency;
+
+
+
+
+        //     if (event.currentTarget.id) {
+
+        //         let result = parseFloat((event.target.value * Cur_OfficialRate).toFixed(2));
+        //        return input.value = result;
+        //         // console.log(result);
+        //         }
+        // })
     });
-    // if (input.id == "BYN") {
-
-
-    // }
-
 })
 
+/*идеи filter*/
+// ? elem.value = event.currentTarget.value*currencies[elem].Cur_OfficialRate: elem.value = event.currentTarget.value
