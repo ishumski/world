@@ -76,23 +76,6 @@ container.innerHTML = `
         
     `;
 
-// function exchangedAmount() {
-
-//     currencies.map(elem => {
-//        return this.value * elem.Cur_OfficialRate;
-//     }
-//     )
-
-// }
-
-/*возвращает знчения из массива с курсами */
-// function currenciesValues(arr) {
-//     arr.map((currency) => {
-//         let { Cur_Abbreviation, Cur_ID, Cur_Name, Cur_OfficialRate, Cur_Scale, Date } = currency;
-//         return Cur_OfficialRate;
-//     })
-// }
-// currenciesValues(currencies);
 /*
 1. получить все инпут
 2. на каждый инпут навесить обработчик "input", при изменении значения что-то желать
@@ -115,15 +98,12 @@ inputs.forEach((input) => {
         event.preventDefault();
 
         //фильтруем и получаетм все нипуты, кроме того, который выбран
-        const filtered = inputs.filter((elem) => (elem.id !== event.target.id));
-        console.log(filtered);
-
-        //возвращает значения валют, кроме той, инпут которой выбран
+        const filtered = inputs.filter((elem) => (elem.id !== event.target.id));     
 
         filtered.forEach((elem) => {
 
             const currency = currencies.find((curr) => curr.Cur_Abbreviation === elem.id);
-            console.log(currency)
+
             let { Cur_Abbreviation, Cur_ID, Cur_Name, Cur_OfficialRate, Cur_Scale, Date } = currency;
 
             if (elem.id === Cur_Abbreviation) {
@@ -136,7 +116,6 @@ inputs.forEach((input) => {
                 elem.value = parseFloat(((event.target.value / Cur_OfficialRate) * Cur_Scale).toFixed(2));
             }
 
-            // console.log(elem.value)
         })
     });
 })
