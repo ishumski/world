@@ -76,17 +76,12 @@ container.innerHTML = `
         
     `;
 
-
-let inputs = Array.from(document.querySelectorAll("input"));
-
 // function exchangedAmount() {
 
 //     currencies.map(elem => {
 //        return this.value * elem.Cur_OfficialRate;
 //     }
 //     )
-
-
 
 // }
 
@@ -112,8 +107,7 @@ const baseRate = Cur_OfficialRate;//курс инпута на котором с
 const quotedRate = Cur_OfficialRate;//получить курс валют остальных инпутов;
 */
 
-
-
+let inputs = Array.from(document.querySelectorAll("input"));
 
 inputs.forEach((input) => {
 
@@ -125,57 +119,25 @@ inputs.forEach((input) => {
         console.log(filtered);
 
         //возвращает значения валют, кроме той, инпут которой выбран
-        function filteredCurrenciesRate(arr) {
-            const filteredCurrencies = arr.filter((currency) => (currency.Cur_Abbreviation !== event.target.id));
-            filteredCurrencies.map((elem) => {
-                // console.log(elem.Cur_OfficialRate)
-                return elem.Cur_OfficialRate;
-            })
-        }
-        filteredCurrenciesRate(currencies);
 
-        filtered.map((elem) => {
+        filtered.forEach((elem) => {
 
-            currencies.forEach((currency) => {
+            const currency = currencies.find((curr) => curr.Cur_Abbreviation === elem.id);
+            console.log(currency)
+            let { Cur_Abbreviation, Cur_ID, Cur_Name, Cur_OfficialRate, Cur_Scale, Date } = currency;
 
-                let { Cur_Abbreviation, Cur_ID, Cur_Name, Cur_OfficialRate, Cur_Scale, Date } = currency;
+            if (elem.id === Cur_Abbreviation) {
+                elem.value = parseFloat(((event.target.value / Cur_OfficialRate) * Cur_Scale).toFixed(2));
+            }
+            if (elem.id === "RUB" && Cur_Abbreviation === "RUB") {
+                elem.value = parseFloat(((event.target.value / Cur_OfficialRate) * Cur_Scale).toFixed(2));
+            }
+            if (elem.id === "PLN" && Cur_Abbreviation === "PLN") {
+                elem.value = parseFloat(((event.target.value / Cur_OfficialRate) * Cur_Scale).toFixed(2));
+            }
 
-                // if (event.target.id !== "USD") {
-
-                // elem.value = event.target.value * (Cur_OfficialRate / filteredCurrenciesRate(currencies));
-                //     console.log(event.target.value);
-                //     console.log(currency);
-                // }
-
-                if (elem.id === Cur_Abbreviation) {
-                    elem.value = parseFloat(((event.target.value / Cur_OfficialRate) * Cur_Scale).toFixed(2));
-                }
-                if (elem.id === "RUB" && Cur_Abbreviation === "RUB") {
-                    elem.value = parseFloat(((event.target.value / Cur_OfficialRate) * Cur_Scale).toFixed(2));
-                }
-                if (elem.id === "PLN" && Cur_Abbreviation === "PLN") {
-                    elem.value = parseFloat(((event.target.value / Cur_OfficialRate) * Cur_Scale).toFixed(2));
-                }
-
-            })
             // console.log(elem.value)
         })
-
-
-        // currencies.map((currency) => {
-
-        // let { Cur_Abbreviation, Cur_ID, Cur_Name, Cur_OfficialRate, Cur_Scale, Date } = currency;
-
-
-
-
-        //     if (event.currentTarget.id) {
-
-        //         let result = parseFloat((event.target.value * Cur_OfficialRate).toFixed(2));
-        //        return input.value = result;
-        //         // console.log(result);
-        //         }
-        // })
     });
 })
 
