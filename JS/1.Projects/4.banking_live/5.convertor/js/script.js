@@ -79,11 +79,6 @@ container.innerHTML = `
 
 let inputs = Array.from(document.querySelectorAll("input"));
 
-const BYN = document.querySelector("#BYN");
-
-const USD = document.querySelector("#USD");
-
-
 // function exchangedAmount() {
 
 //     currencies.map(elem => {
@@ -111,18 +106,46 @@ const USD = document.querySelector("#USD");
 сумму в активном и*(baseRate(значение валюты активного инпута event.target.Cur_OfficialRate)/quotedRate(котируемая валюта в которую хотим перевести baseRate))
 */
 
+/*
+const amount = input.value;
+const baseRate = Cur_OfficialRate;//курс инпута на котором сработал обработчик событий;
+const quotedRate = Cur_OfficialRate;//получить курс валют остальных инпутов;
+*/
+
+
+
+
 inputs.forEach((input) => {
 
     input.addEventListener("input", (event) => {
         event.preventDefault();
-        let filtered = inputs.filter((elem) => (elem.id !== event.target.id));
+
+        //фильтруем и получаетм все нипуты, кроме того, который выбран
+        const filtered = inputs.filter((elem) => (elem.id !== event.target.id));
         console.log(filtered);
+
+        //возвращает значения валют, кроме той, инпут которой выбран
+        function filteredCurrenciesRate(arr) {
+            const filteredCurrencies = arr.filter((currency) => (currency.Cur_Abbreviation !== event.target.id));
+            filteredCurrencies.map((elem) => {
+                // console.log(elem.Cur_OfficialRate)
+                return elem.Cur_OfficialRate;
+            })
+        }
+        filteredCurrenciesRate(currencies);
 
         filtered.map((elem) => {
 
             currencies.forEach((currency) => {
 
                 let { Cur_Abbreviation, Cur_ID, Cur_Name, Cur_OfficialRate, Cur_Scale, Date } = currency;
+
+                // if (event.target.id !== "USD") {
+
+                // elem.value = event.target.value * (Cur_OfficialRate / filteredCurrenciesRate(currencies));
+                //     console.log(event.target.value);
+                //     console.log(currency);
+                // }
 
                 if (elem.id === Cur_Abbreviation) {
                     elem.value = parseFloat(((event.target.value / Cur_OfficialRate) * Cur_Scale).toFixed(2));
@@ -133,12 +156,9 @@ inputs.forEach((input) => {
                 if (elem.id === "PLN" && Cur_Abbreviation === "PLN") {
                     elem.value = parseFloat(((event.target.value / Cur_OfficialRate) * Cur_Scale).toFixed(2));
                 }
-                // if (elem.id === "EUR" && Cur_Abbreviation === "USD") {
-                //     elem.value = event.target.value * (event.target.Cur_OfficialRate/ Cur_Abbreviation);
-                // }
 
             })
-            console.log(elem.value)
+            // console.log(elem.value)
         })
 
 
