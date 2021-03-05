@@ -43,11 +43,16 @@ const currencies = [
     },
 ]
 
-container.innerHTML = `
-        <div class="BYN">
+
+/*
+<div class="BYN">
             <input type="text" id="BYN" type="number" min="0" max="10000">
             <span>BYN</span>
         </div>
+*/
+
+container.innerHTML = `
+        
 
         <div class="USD">
             <input type="text" id="USD" type="number" min="0" max="10000">
@@ -98,23 +103,32 @@ inputs.forEach((input) => {
         event.preventDefault();
 
         //фильтруем и получаетм все нипуты, кроме того, который выбран
-        const filtered = inputs.filter((elem) => (elem.id !== event.target.id));     
+        const filtered = inputs.filter((elem) => (elem.id !== event.target.id));
 
         filtered.forEach((elem) => {
 
-            const currency = currencies.find((curr) => curr.Cur_Abbreviation === elem.id);
+            let currency = currencies.find((curr) => curr.Cur_Abbreviation === elem.id);
+            let baseCurrencyRate = currencies.find((curr) => curr.Cur_Abbreviation !== elem.id);//ошибка
+            console.log(baseCurrencyRate);
 
             let { Cur_Abbreviation, Cur_ID, Cur_Name, Cur_OfficialRate, Cur_Scale, Date } = currency;
 
-            if (elem.id === Cur_Abbreviation) {
-                elem.value = parseFloat(((event.target.value / Cur_OfficialRate) * Cur_Scale).toFixed(2));
-            }
-            if (elem.id === "RUB" && Cur_Abbreviation === "RUB") {
-                elem.value = parseFloat(((event.target.value / Cur_OfficialRate) * Cur_Scale).toFixed(2));
-            }
-            if (elem.id === "PLN" && Cur_Abbreviation === "PLN") {
-                elem.value = parseFloat(((event.target.value / Cur_OfficialRate) * Cur_Scale).toFixed(2));
-            }
+
+           
+                elem.value = event.target.value * (baseCurrencyRate.Cur_OfficialRate / Cur_OfficialRate) * Cur_Scale;
+         
+
+          
+
+            // if (elem.id === Cur_Abbreviation) {
+            //     elem.value = parseFloat(((event.target.value / Cur_OfficialRate) * Cur_Scale).toFixed(2));
+            // }
+            // if (elem.id === "RUB" && Cur_Abbreviation === "RUB") {
+            //     elem.value = parseFloat(((event.target.value / Cur_OfficialRate) * Cur_Scale).toFixed(2));
+            // }
+            // if (elem.id === "PLN" && Cur_Abbreviation === "PLN") {
+            //     elem.value = parseFloat(((event.target.value / Cur_OfficialRate) * Cur_Scale).toFixed(2));
+            // }
 
         })
     });
