@@ -1,6 +1,7 @@
 const container = document.querySelector(".container");
 
-const currencies = [
+const curr = [
+
     {
         Cur_Abbreviation: "USD",
         Cur_ID: 145,
@@ -40,46 +41,73 @@ const currencies = [
         Cur_OfficialRate: 3.6289,
         Cur_Scale: 1,
         Date: "2021-03-02T00:00:00",
-    },
+    }
 ]
 
+const currencyBYN = {
+    Cur_Abbreviation: "BYN",
+    Cur_Name: "Беларусский рубль",
+    Cur_OfficialRate: 1,
+    Cur_Scale: 1,
+}
 
-/*
-  <div class="BYN">
-            <input type="text" id="BYN" type="number" min="0" max="10000">
-            <span>BYN</span>
-        </div>
-*/
+const currencies = curr.concat(currencyBYN);
 
-container.innerHTML = `
-      
 
-        <div class="USD">
-            <input type="text" id="USD" type="number" min="0" max="10000">
-            <span>USD</span>
-        </div>
 
-        <div class="EUR">
-            <input type="text" id="EUR" type="number" min="0" max="10000">
-            <span>EUR</span>
-        </div>
 
-        <div class="PLN">
-            <input type="text" id="PLN" type="number" min="0" max="10000">
-            <span>PLN</span>
-        </div>
+// import templateExchangeRates from "../../templates/pages/exchange_rates/index.js"
+// import currentDate from "../../utils/utils.js"
 
-        <div class="RUB">
-            <input type="text" id="RUB" type="number" min="0" max="10000">
-            <span>RUB</span>
-        </div>
+// const rootDiv = document.querySelector(".container");
 
-        <div class="GBP">
-            <input type="text" id="GBP" type="number" min="0" max="10000">
-            <span>GBP</span>
-        </div>
-        
-    `;
+// export default function renderExchangeRates() {
+//     rootDiv.innerHTML = templateExchangeRates;
+
+//     //рендер таблицы для получения курсов валют по API
+//     const exchangeRates = document.querySelector(".exchange__rates");
+
+//     const table = document.createElement("table");
+
+//     const thead = document.createElement("thead");
+//     const tbody = document.createElement("tbody");
+
+//     const headers = ["Валюта", "Покупка", "Продажа"];
+//     const headerRow = document.createElement("tr");
+
+//     headers.forEach(elem => {
+//         const header = document.createElement("th");
+//         const textNode = document.createTextNode(elem);
+
+//         header.appendChild(textNode);
+//         headerRow.appendChild(header);
+//     })
+//     thead.appendChild(headerRow)
+//     table.appendChild(thead);
+//     exchangeRates.appendChild(table);
+
+
+//     const BANK_RATE = 1.15;
+
+//     fetch("https://www.nbrb.by/api/exrates/rates?periodicity=0")
+//         .then(response => response.json())
+//         .then(currencies => {
+
+//             const rows = currencies.map((currency) => {
+//                 let { Cur_ID, Cur_Abbreviation, Cur_Scale, Cur_Name, Cur_OfficialRate } = currency;
+
+//                 if ([145, 292, 143, 293, 298].includes(Cur_ID)) {
+
+//                     return `
+//                     <tr>
+//                         <td>${Cur_Scale} ${Cur_Name} (${Cur_Abbreviation})</td>
+//                         <td>${Cur_OfficialRate}</td>
+//                         <td>${(Cur_OfficialRate + ((Cur_OfficialRate * BANK_RATE) / 100)).toFixed(4)}</td>
+//                     </tr>
+
+//                     `
+//                 }
+//             });
 
 let inputs = Array.from(document.querySelectorAll("input"));
 
@@ -95,7 +123,7 @@ inputs.forEach((input) => {
             let currency = currencies.find((curr) => curr.Cur_Abbreviation === elem.id);
             let baseCurrencyRate = currencies.find((curr) => curr.Cur_Abbreviation === event.target.id);
 
-            let { Cur_Abbreviation, Cur_ID, Cur_Name, Cur_OfficialRate, Cur_Scale, Date } = currency;
+            let { Cur_OfficialRate, Cur_Scale } = currency;
 
             if (event.target.id !== "BYN") {
 
@@ -105,9 +133,19 @@ inputs.forEach((input) => {
                     elem.value = parseFloat((event.target.value * (((baseCurrencyRate.Cur_OfficialRate / baseCurrencyRate.Cur_Scale) / Cur_OfficialRate) * Cur_Scale)).toFixed(4));
                 }
 
-            } else {
-                elem.value = parseFloat(((event.target.value / Cur_OfficialRate) * Cur_Scale).toFixed(4));
+                return;
             }
+            elem.value = parseFloat(((event.target.value / Cur_OfficialRate) * Cur_Scale).toFixed(4));
         })
     });
 })
+
+    //         tbody.innerHTML = rows.join("");
+    //         table.appendChild(tbody);
+    //     });
+
+    // exchangeRates.appendChild(table);
+
+    // currentDate();
+
+// }

@@ -6,6 +6,14 @@ const tableState = {
     sorting: "asc",
     sortingField: null
 }
+//
+
+function renderSortIcon(header) {
+    if (header === tableState.sortingField) {
+        return tableState.sorting === "asc" ? "&uarr;" : "&darr;"
+    }
+    return "";
+}
 
 export default function renderTable(data) {
     document.body.innerHTML = "";
@@ -17,16 +25,16 @@ export default function renderTable(data) {
 
     thead.innerHTML = `
 <tr>
-    <th colspan="1" rowspan="2" id="firstName">Frst name</th>
-    <th colspan="1" rowspan="2" id="lastName">Last name</th>
-    <th colspan="1" rowspan="2" id="class">Class</th>
+    <th colspan="1" rowspan="2" id="firstName">First name${renderSortIcon("firstName")}</th>
+    <th colspan="1" rowspan="2" id="lastName">Last name${renderSortIcon("lastName")}</th>
+    <th colspan="1" rowspan="2" id="class">Class${renderSortIcon("class")}</th>
     <th colspan="3" rowspan="1"  id="">Grades</th>
-    <th colspan="1" rowspan="2" id="average">Average</th>
+    <th colspan="1" rowspan="2" id="average">Average${renderSortIcon("average")}</th>
 
     <tr>
-        <th id="Math">Math</th>
-        <th id="Chemistry">Chemistry</th>
-        <th id="Literature">Literature</th>
+        <th id="Math">Math${renderSortIcon("Math")}</th>
+        <th id="Chemistry">Chemistry${renderSortIcon("Chemistry")}</th>
+        <th id="Literature">Literature${renderSortIcon("Literature")}</th>
     </tr>
 
 </tr>
@@ -68,6 +76,10 @@ export default function renderTable(data) {
     //сортировка
     thead.addEventListener("click", (event) => {
         const header = event.target.id;
+
+        if (!header) {
+            return;
+        }
 
         if (tableState.sortingField === header) {
             tableState.sorting = tableState.sorting === "asc" ? "desc" : "asc"

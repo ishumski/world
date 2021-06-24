@@ -1,3 +1,9 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
 table,
 td,
 th {
@@ -6,7 +12,10 @@ th {
 }
 
 td,
-th{
-    padding: 10px;
+th {
+    padding: 15px;
 }
 
+span {
+    margin: 5px;
+}

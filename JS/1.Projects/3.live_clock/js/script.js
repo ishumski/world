@@ -10,7 +10,7 @@ function coloredClock() {
     let m = time.getMinutes().toString();
     let s = time.getSeconds().toString();
 
-    if (h.length%12 < 2) {
+    if (h.length < 2) {
         h = `${0 + h}`;
     }
     if (m.length < 2) {
