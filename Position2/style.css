@@ -1,11 +1,9 @@
 .parent {
     background-color: cornflowerblue;
-    margin-top: 100px;
-    margin-left: 100px;
     width: 500px;
-    height: 500px;
+    height: 120vh;
     position: relative;
-    top: 200px;
+    margin-top: 100px;
     z-index: 10;
 }
 
@@ -29,4 +27,13 @@
     width: 100px;
     height: 100px;
     position: fixed;
+}
+
+.child4{
+    background-color: rgb(255, 255, 255);
+    width: 100px;
+    height: 100px;
+    top: 100px;
+    left: 308px;
+    position: sticky;
 }
